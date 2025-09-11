@@ -8,9 +8,13 @@
     <style>
         html {
             font-family: "Playfair Display", serif;
-         font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
+            }
+
+            .flex {
+                display: flex;
+                flex-direction: row;
             }
 
             .color-box {
@@ -38,15 +42,36 @@
                 background-color: yellow;
             }
 
+                p{
+                    font-size:16px;
+                }
+
+                .small-text{
+                    font-size:12px;
+                }
+
+                h3 {
+                    font-size: 20px;
+                }
+
+                h2 {
+                    font-size: 24px;
+                }
+
+                h1 {
+                    font-size: 28px;
+                }
 
     </style>
 </head>
 <body>
+    <div class="flex">
     <div class="color-box" id="box1">1</div>
     <div class="color-box" id="box2">2</div>
     <div class="color-box" id="box3">3</div>
     <div class="color-box" id="box4">4</div>
     <div class="color-box" id="box5">5</div>
+    </div>
 
     <h1>This is a heading 1</h1>
     <h2>This is a heading 2</h2>
