@@ -4,25 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
-        p{
-            background-color: purple;
-            font-size: 100px;
-        }
-        #myId{
-            background-color: yellow;
-        }
-        .myClass{
-            background-color: green;
-        }
-        p{
-            font-size: 200px;
-        }
-    </style></head>
+        html {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+            .flex {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .color-box {
+                height: 75px;
+                width: 75px;
+
+            }
+            #box1 {
+                background-color: #AA4465;
+            }
+
+            #box2 {
+                background-color: #777A33;
+            }
+
+            #box3 {
+                background-color: #4C6B5E
+                ;
+            }
+
+            #box4 {
+                background-color: #3B4B68;
+            }
+
+            #box5 {
+                background-color: #2A324B;
+            }
+
+                p{
+                    font-size:16px;
+                }
+
+                .small-text{
+                    font-size:12px;
+                }
+
+                h3 {
+                    font-size: 20px;
+                }
+
+                h2 {
+                    font-size: 24px;
+                }
+
+                h1 {
+                    font-size: 28px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #3B4B68;
+                }
+
+                 a:hover {
+                    text-decoration: underline;
+                    color: #3B4B68;
+                }
+
+                a:visited{
+                    color: #4C6B5E;
+                }
+
+                .button {
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+}
+    </style>
+</head>
 <body>
-    <p>Hi!</p>
-    <p id="myId">This is another p element!</p>
-    <p class="myClass">This is anotger p element!</p>
-    <p id="myId" class="myClass">This is anther p element</p>
+    <div class="flex">
+    <div class="color-box" id="box1">1</div>
+    <div class="color-box" id="box2">2</div>
+    <div class="color-box" id="box3">3</div>
+    <div class="color-box" id="box4">4</div>
+    <div class="color-box" id="box5">5</div>
+    </div>
+
+    <h1>This is a heading 1</h1>
+    <h2>This is a heading 2</h2>
+    <h3>This is a heading 3</h3>
+
+    <p>This is paragraph text</p>
+    <p class="small-text">This is small text.<br>
+    Color 1: #AA4465 with a contrast of 5.63:1.<br>
+    second color : #777A33 and contrast is 4.54:1<br>
+    third color: #4C6B5E  and has a contrast of 5.87:1<br>
+    fourth color: #3B4B68 and has a contrast of 8.77:1<br>
+    fifth color: #2A324B with a contrast of 12.67:1</p>
+
+    <p><a href="#">This is a link</a></p>
+
+   
 </body>
 </html>
