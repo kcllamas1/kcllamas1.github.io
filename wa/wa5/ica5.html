@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            font-family: Helvetica, sans-serif;
+            max-width: 500px;
+            margin: 2rem auto;
+            
+        }
+        
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+        
+        h3 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 0;
+        }
+        
+        button {
+            height: 2rem;
+            width: 10rem;
+            border-radius: 20px;
+            border: 2px black solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            font-size: 1rem;
+        }   
+        
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .card-content {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 2rem;
+            border: 0.25rem solid black;
+            text-align: center;
+            
+        }
+    </style>
+    
+</head>
+<body>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Community Garden Project</h3>
+    
+    <button class="expand-btn" aria-label="Expand card">+</button>
+  </div>
+  <div class="card-content">
+    <p class="summary">Join neighbors in creating a shared growing space...</p>
+    <div class="details hidden">
+      <p>Meeting every Saturday at 10am. Tools provided. All skill levels welcome.</p>
+      <p>Contact: garden@community.org</p>
+    </div>
+  </div>
+</div>
+<script> 
+    let info = false;
+    const expandBtn = document.querySelector('.expand-btn');
+    const details = document.querySelector('.card-content');
+
+    expandBtn.addEventListener('click', showInfo);
+
+    function showInfo(){
+        //console.log("hi");
+        //alert("This is an alert");
+        if (info == false){
+            details.style.display = 'flex';
+            expandBtn.textContent = '-';
+            info = true;
+        }
+        else {
+            details.style.display = 'none';
+            expandBtn.textContent = '+';
+            info = false;
+        }
+    }
+</script>
+
+</body>
+</html>
