@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            }
+        * {
+            margin: 3;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;  
+            background-color: #112b44;  
+            color: white;
+            position: relative;
+        }
+       .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ecf0f1;
+        } 
+        .nav-menu {
+            display: flex;
+            gap: 2rem; 
+            align-items: center;
+        }
+        .nav-menu a {
+            color: #ecf0f1;
+            padding: 0.5rem 1rem;
+             border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu   a:hover, .nav-menu  a:focus 
+            {
+            color: #3498db;
+            }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none; 
+            cursor: pointer;
+             padding: 0.5rem;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            
+        }
+       .nav-toggle span {
+            display: flex;
+            width: 25px;
+            height: 3px;
+            background-color: #ecf0f1;
+            border-radius: 2px; 
+            
+        }
+
+        .nav-toggle:hover,.nav-toggle:focus {
+            background-color: #ffffff1a;
+        }
+
+     @media(max-width: 768px) {
+            .main-nav {
+                padding: 1rem;
+                 }
+
+            .nav-menu {
+                display: none;
+                 position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #2c3e50;
+                flex-direction: column;
+                 gap: 0;
+                padding: 1rem 0;
+                box-shadow: 0 4px 6px #0000001a;
+                }
+
+            .nav-menu.show {
+                display: flex;
+            }
+            .nav-menu li {
+                width: 100%;
+            }
+            .nav-menu a {
+                display: block;
+                padding: 1rem 2rem;
+                width: 100%;
+                border-radius: 0;
+                border-bottom: 1px solid #ffffff1a;
+            }
+
+            .nav-menu a:hover, .nav-menu a:focus {
+                background-color: #34495e;
+            }
+            .nav-toggle {
+                display: flex;
+            }}
+        </style>
+
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-brand"><strong>Latine Student Alliance</strong></div>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span> 
+                <span></span>
+                <span></span>
+             </button>
+
+        <ul class="nav-menu">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./resources.html">Resources</a></li>
+            <li><a href="./events.html">Events</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+     <main class="content">
+        <section id="home" class="section">
+            <h2 tabindex="1"> Welcome to our Latine Hub</h2>
+            <p tabindex="2">We are an organization on the Univeristy of Colorado, Boulder's campus that exists to empower Latinx youth in higher education. We are all about community and support.<br>
+                Latinx Student Alliance (LSA) is a strong support group for the Latinx population on their campus. LSA strives to raise cultural awareness and inform students of the opportunities available. By incorporating unity and cooperation, LSA will guide their members towards academic excellence, community involvement, leadership building and personal growth. <br>
+            If you wish to be a part of this organization, please show up to our events! We are a latinx organization but all are welcome. See you there!</p>
+            <img 
+         src="../../img/boulderCampus.avif" 
+         width="750"
+         height="500"
+         alt="Picture of Boulder Campus" 
+         tabindex="3">
+        </section>
+    </main>
+
+
+
+
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            
+            navMenu.classList.toggle('show');
+
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            navToggle.classList.toggle('active');
+        });
+
+    navToggle.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+              
+                navMenu.classList.toggle('show');
+                
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                navToggle.classList.toggle('active');
+            }});
+
+        navMenu.addEventListener('click', function(event) {
+            if (event.target.tagName === 'A') {
+                navMenu.classList.remove('show');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }});
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('show');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }});
+
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
+            
+            if (!isClickInsideNav && navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
