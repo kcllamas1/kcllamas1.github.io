@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Design System</title>
+    
+    <!-- fonts from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #2C3E50;
+            background-color: #F8F9FA;
+            padding: 24px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 48px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        header h1 {
+            font-size: 48px;
+            color: #680E4B;
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 3px solid #680E4B;
+        }
+        
+        h2 {
+            font-size: 36px;
+            color: #680E4B;
+            margin-bottom: 24px;
+        }
+        
+        h3 {
+            font-size: 24px;
+            color: #0C7C59;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+        }
+        
+        section {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .colorSwatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+        }
+        
+        .colorCard {
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+        }
+        
+        .colorSample {
+            height: 100px;
+        }
+        
+        .primaryColor {
+            background-color: #680E4B;
+        }
+        
+        .secondaryColor {
+            background-color: #0C7C59;
+        }
+        
+        .accentColor {
+            background-color: #033F63;
+        }
+        
+        .neutralColor {
+            background-color: #2C3E50;
+        }
+        
+        .highlightColor {
+            background-color: #F8F9FA;
+            border: 1px solid #dddddd;
+        }
+        
+        .colorDetails {
+            padding: 16px;
+            background: white;
+        }
+        
+        .colorDetails h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+        }
+        
+        .hexCode {
+            font-family: monospace;
+            color: #666666;
+            margin: 4px 0;
+        }
+        
+        .contrast {
+            font-size: 14px;
+            color: #0C7C59;
+            font-weight: 600;
+        }
+        
+        .typeSample {
+            padding: 24px;
+            background: #F8F9FA;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .typeSample h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        
+        .typeSample h2 {
+            font-size: 36px;
+            margin: 0;
+        }
+        
+        .typeSample h3 {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .bodyExample {
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .smallExample {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        
+        .spacingExample {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .spacingBlock {
+            background: #0C7C59;
+            border-radius: 8px;
+            height: 50px;
+           
+        }
+        
+        /* sizing */
+        .spacingXs { width: 8px; }
+        .spacingSm { width: 16px; }
+        .spacingMd { width: 24px; }
+        .spacingLg { width: 32px; }
+        .spacingXl { width: 48px; }
+        
+        .componentExample {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .primaryButton {
+            padding: 12px 24px;
+            background-color: #680E4B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .primaryButton:hover {
+            background-color: #033F63;
+        }
+        
+        .standardLink,
+        .visitedLink {
+            color: #0C7C59;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .standardLink:hover,
+        .visitedLink:hover {
+            color: #680E4B;
+            border-bottom-color: #033F63;
+        }
+        
+        .visitedLink {
+            color: #A44F89;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Design System</h1>
+        </header>
+        <!-- section for the color palettee -->
+        <section class="colorSection">
+            <h2>Color Palette</h2>
+
+            
+            <div class="colorSwatches">
+                <div class="colorCard">
+                    <div class="colorSample primaryColor"></div>
+                    <div class="colorDetails">
+
+                        <h3>Primary Color</h3>
+                        <p class="hexCode">#680E4B</p>
+                        <p class="contrast">Contrast Ratio: 11.97:1</p>
+                    </div>
+                </div>
+                
+
+                <div class="colorCard">
+                    <div class="colorSample secondaryColor"></div>
+                    <div class="colorDetails">
+
+                        <h3>Secondary Color</h3>
+                        <p class="hexCode">#0C7C59</p>
+                        <p class="contrast">Contrast Ratio: 5.19:1</p>
+                    </div>
+                </div>
+                
+
+                <div class="colorCard">
+                    <div class="colorSample accentColor"></div>
+                    <div class="colorDetails">
+
+                        <h3>Accent Color</h3>
+                        <p class="hexCode">#033F63</p>
+                        <p class="contrast">Contrast Ratio: 11.08:1</p>
+                    </div>
+                </div>
+                
+
+                <div class="colorCard">
+                    <div class="colorSample neutralColor"></div>
+                    <div class="colorDetails">
+
+                        <h3>Neutral Color</h3>
+                        <p class="hexCode">#2C3E50</p>
+                        <p class="contrast">Contrast Ratio: 10.98:1</p>
+                    </div>
+                </div>
+                
+
+                <div class="colorCard">
+                    <div class="colorSample highlightColor"></div>
+                    <div class="colorDetails">
+                        <h3>Highlight Color</h3>
+                        <p class="hexCode">#F8F9FA</p>
+                        <p class="contrast">Contrast Ratio: 1.1:1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- the typography section -->
+        <section class="typographySection">
+            <h2>Typography</h2>
+                <div class="typeSample">
+                  <h1 class="headingExample">Heading 1 - Playfair Display</h1>
+                </div>
+            
+              <div class="typeSample">
+                    <h2 class="headingExample">Heading 2 - Playfair Display</h2>
+             </div>
+            
+                <div class="typeSample">
+                 <h3 class="headingExample">Heading 3 - Playfair Display</h3>
+             </div>
+            
+             <div class="typeSample">
+                  <p class="bodyExample">Body Text - Using Inter with a comfortable line height and readable size.</p>
+                </div>
+            
+                <div class="typeSample">
+                  <p class="smallExample">Small Text - Subtle and understated, perfect for annotations and footnotes.</p>
+                </div>
+        </section>
+        
+        <!-- the spacing section -->
+        <section class="spacingSection">
+            <h2>Spacing System</h2>
+            <h3>Spacing blocks demonstrating size variations from xs to xl</h3>
+            <div class="spacingExample">
+                <div class="spacingBlock spacingXs"></div>
+                
+                <div class="spacingBlock spacingSm"></div>
+                
+                <div class="spacingBlock spacingMd"></div>
+                
+                <div class="spacingBlock spacingLg"></div>
+                
+                <div class="spacingBlock spacingXl"></div>
+            </div>
+        </section>
+        
+        <!-- the button and link stuff --> 
+        <section class="componentsSection">
+            <h2>Interactive Components</h2>
+            <div class="componentExample">
+                <button class="primaryButton">Primary Button</button>
+                <a href="#" class="standardLink">Standard Link</a>
+                <a href="#" class="visitedLink" style="color: #A44F89;">Visited Link</a>
+            </div>
+        </section>
+              
+    </div>
+</body>
+</html>

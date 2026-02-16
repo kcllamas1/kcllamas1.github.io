@@ -52,7 +52,7 @@ p, li, table {
 /* || header layout */
 
 div[class="nav"], article, footer, .secondary {
-  background-color: green;
+  background-color: #008000;
 }
 
 article, footer, .secondary {
@@ -220,7 +220,7 @@ audio {
 }
 
 .comment-form input[type="submit"], .show-hide {
-  background: #333;
+  background: #333333;
   border: 0;
   color: white;
 }

@@ -1,5 +1,11 @@
 /* || General setup */
 
+/*
+The color contrast of the text and the green background is 2.45:1 so the background color was changed to white(#ffffff) which has a contrast
+now of 12.63:1
+*/
+
+
 html, body {
   margin: 0;
   padding: 0;
