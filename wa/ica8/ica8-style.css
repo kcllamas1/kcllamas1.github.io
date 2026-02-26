@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #ccc;
+}
+
+article {
+  width: 210mm;
+  height: 297mm;
+  margin: 20px auto;
+  position: relative;
+  border-top: 1mm  solid red;
+  border-bottom: 1mm solid red;
+  background-color: white;
+
+  background-image: 
+  linear-gradient( 
+    to bottom, 
+    /* the opcity change as we go down the page*/
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 15%,
+    rgba(0, 0, 0, 0) 85%,
+    rgba(0, 0, 0, 0.4) 100%
+    ), 
+
+  url(top-image.png), 
+  url(bottom-image.png);
+  background-repeat:
+    no-repeat, /*the gradient*/
+    no-repeat, /*the top*/
+    no-repeat; /*bottom*/
+  background-position:
+    top,
+    top,
+    bottom;
+}
+
+
+address {
+  position: absolute;
+  bottom: 8mm;
+  right: 20mm;
+  
+}
+
+h1 {
+  position: absolute;
+  top: 12mm;
+  left: 20mm;
+  width: 128px;
+  height: 128px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 44px 0;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+
+    background-image: url(logo.png);
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.6));
+}
