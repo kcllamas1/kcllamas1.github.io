@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MDN CSS Grid — Test Your Skills</title>
+  <style>
+    body {
+      font: 1.2em / 1.5 sans-serif;
+    }
+
+    /* ── TASK 1 ── */
+    .task1 .grid > * {
+      background-color: #4d7298;
+      border: 2px solid #77a6b6;
+      border-radius: 0.5em;
+      color: white;
+      padding: 0.5em;
+    }
+
+    .task1 .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── TASK 2 ── */
+    .task2 .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 100px 100px 100px;
+      gap: 10px;
+    }
+
+    .task2 .grid > * {
+      border-radius: 0.5em;
+      color: white;
+      padding: 0.5em;
+    }
+
+    .task2 .item1 {
+      background-color: rgb(74 102 112 / 70%);
+      border: 5px solid rgb(74 102 112 / 100%);
+      grid-column: 1 / 4;
+      grid-row: 1 / 3;
+      order: 1;
+    }
+
+    .task2 .item2 {
+      background-color: rgb(214 162 173 / 70%);
+      border: 5px solid rgb(214 162 173 / 100%);
+      grid-column: 2 / 5;
+      grid-row: 2 / 4;
+    }
+
+    /* ── TASK 3 ── */
+    .task3 .grid > * {
+      background-color: #4d7298;
+      border: 2px solid #77a6b6;
+      border-radius: 0.5em;
+      color: white;
+      padding: 0.5em;
+    }
+
+    .task3 .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas:
+        "aa aa"
+        "bb cc"
+        ".  dd";
+    }
+
+    .task3 .one   { grid-area: aa; }
+    .task3 .two   { grid-area: bb; }
+    .task3 .three { grid-area: cc; }
+    .task3 .four  { grid-area: dd; }
+
+    /* ── TASK 4 ── */
+    .task4 .container {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .task4 .card {
+      display: grid;
+      grid-template-rows: 200px min-content;
+    }
+
+    .task4 .card > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .task4 .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .task4 .tags > * {
+      background-color: #999999;
+      color: white;
+      padding: 0.2em 0.8em;
+      border-radius: 0.2em;
+      font-size: 80%;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Test Your Skills: CSS Grids</h1>
+
+<h2>Task 1</h2>
+<div class="task1">
+  <div class="grid">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three</div>
+    <div>Four</div>
+  </div>
+</div>
+
+<h2>Task 2</h2>
+<div class="task2">
+  <div class="grid">
+    <div class="item1">One</div>
+    <div class="item2">Two</div>
+  </div>
+</div>
+
+<h2>Task 3</h2>
+<div class="task3">
+  <div class="grid">
+    <div class="one">One</div>
+    <div class="two">Two</div>
+    <div class="three">Three</div>
+    <div class="four">Four</div>
+  </div>
+</div>
+
+<h2>Task 4</h2>
+<div class="task4">
+  <div class="container">
+    <div class="card">
+      <img alt="a single red balloon"
+           src="https://mdn.github.io/shared-assets/images/examples/balloons1.jpg" />
+      <ul class="tags">
+        <li>balloon</li><li>red</li><li>sky</li><li>blue</li><li>Hot air balloon</li>
+      </ul>
+    </div>
+    <div class="card">
+      <img alt="balloons over some houses"
+           src="https://mdn.github.io/shared-assets/images/examples/balloons2.jpg" />
+      <ul class="tags">
+        <li>balloons</li><li>houses</li><li>train</li><li>harborside</li>
+      </ul>
+    </div>
+    <div class="card">
+      <img alt="close-up of balloons inflating"
+           src="https://mdn.github.io/shared-assets/images/examples/balloons3.jpg" />
+      <ul class="tags">
+        <li>balloons</li><li>inflating</li><li>green</li><li>blue</li>
+      </ul>
+    </div>
+    <div class="card">
+      <img alt="a balloon in the sun"
+           src="https://mdn.github.io/shared-assets/images/examples/balloons4.jpg" />
+      <ul class="tags">
+        <li>balloon</li><li>sun</li><li>sky</li><li>summer</li><li>bright</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
