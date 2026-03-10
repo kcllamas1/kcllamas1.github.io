@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Your Skills: Responsive Design</title>
+  <style>
+    /* ── Base styles (mobile-first) ── */
+    body {
+      font: 1.2em / 1.5 sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      padding: 0.5em;
+    }
+
+    /* All sections stacked on mobile */
+    header,
+    main,
+    aside,
+    footer,
+    nav {
+      background-color: #4d7298;
+      border: 2px solid #77a6b6;
+      color: white;
+      padding: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      padding: 0.3em 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5em;
+    }
+
+    .card {
+      background-color: #77a6b6;
+      border: 2px solid #4d7298;
+      padding: 0.5em;
+    }
+
+    /* ── Desktop layout (min-width: 700px) ── */
+    @media (min-width: 700px) {
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 0.5em;
+        grid-template-areas:
+          "header  header"
+          "nav     main"
+          "nav     aside"
+          "footer  footer";
+      }
+
+      header  { grid-area: header;  margin-bottom: 0; }
+      nav     { grid-area: nav;     margin-bottom: 0; }
+      main    { grid-area: main;    margin-bottom: 0; }
+      aside   { grid-area: aside;   margin-bottom: 0; }
+      footer  { grid-area: footer;  margin-bottom: 0; }
+
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="padding: 0 0.5em;">Test Your Skills: Responsive Design</h1>
+
+<div class="wrapper">
+  <header>
+    <h2>My Website</h2>
+  </header>
+
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About Us</li>
+      <li>Our Products</li>
+      <li>Contact Us</li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Main Content</h2>
+    <p>This is the main content area. On mobile it stacks below the navigation. On wider screens it appears to the right of the navigation.</p>
+    <div class="cards">
+      <div class="card">Card one</div>
+      <div class="card">Card two</div>
+      <div class="card">Card three</div>
+      <div class="card">Card four</div>
+      <div class="card">Card five</div>
+      <div class="card">Card six</div>
+    </div>
+  </main>
+
+  <aside>
+    <h2>Sidebar</h2>
+    <p>Related links and supplementary information.</p>
+  </aside>
+
+  <footer>
+    <p>Footer content &mdash; &copy; 2026</p>
+  </footer>
+</div>
+
+</body>
+</html>
