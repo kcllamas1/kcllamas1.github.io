@@ -1,0 +1,86 @@
+/* actually style this later,just getting the layout working for neow */
+ 
+body {
+  font-family: Arial, sans-serif; /* placeholder -chnge this */
+  background: white;
+  color: black;
+  padding: 20px;
+}
+ 
+h1 {
+  font-size: 2rem;
+  /* ...make this look cooler */
+}
+ 
+/* main bubble area */
+.bubble-arena {
+  border: 2px dashed black; 
+  width: 500px;
+  height: 260px;
+  position: relative;
+  cursor: crosshair;
+  /* make look less ugly */
+}
+ 
+#bubbleCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+ 
+.arena-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: gray;
+  white-space: nowrap;
+}
+ 
+.arena-hint.hidden {
+  display: none;
+}
+ 
+/* volume bar, very basic for now */
+.vol-bar-wrap {
+  width: 500px;
+  margin-top: 8px;
+}
+ 
+.vol-bar-track {
+  height: 10px;
+  background: #ddd;
+}
+ 
+.vol-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: blue; /* pick a real color */
+  transition: width 0.2s;
+}
+ 
+/* misc */
+.vol-label {
+  margin-bottom: 6px;
+}
+ 
+.bubble-stats {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: gray;
+}
+ 
+/* pop burst -keeping this from the real version */
+.pop-burst {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  animation: burst 0.4s ease-out forwards;
+}
+ 
+@keyframes burst {
+  0%   { width: 0px; height: 0px; opacity: 1; transform: translate(-50%, -50%); }
+  100% { width: 24px; height: 24px; opacity: 0; transform: translate(-50%, -50%); }
+}
+ 

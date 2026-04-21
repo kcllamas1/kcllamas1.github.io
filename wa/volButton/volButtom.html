@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bubble volume thing (wip)</title>
+  <link rel="stylesheet" href="volButton.css" />
+</head>
+<body>
+ 
+  <main>
+ 
+    <header>
+      <!-- make look nicer later.. -->
+      <h1>bubble volume</h1>
+      <p>[tagline goes here?]</p>
+    </header>
+ 
+ 
+ 
+    <section class="volume-section">
+ 
+      <div class="vol-label">
+        volume: <span id="volDisplay">0%</span>
+      </div>
+ 
+      <!-- THIS IS THE MAIN THING , bubbles go in here, they float around and you pop them -->
+    <!-- each bubble = 1% volume -->
+      <div class="bubble-arena" id="bubbleArena">
+        <canvas id="bubbleCanvas"></canvas>
+        <p class="arena-hint" id="arenaHint">click and drag to pop bubbles</p>
+      </div>
+ 
+      <!-- style this bar laterr -->
+      <div class="vol-bar-wrap">
+        <div class="vol-bar-track">
+          <div class="vol-bar-fill" id="volFill"></div>
+        </div>
+      </div>
+ 
+      <p class="bubble-stats">
+        popped: <span id="poppedCount">0</span> / 100
+      </p>
+ 
+      <button id="resetBtn">reset</button>
+ 
+    </section>
+ 
+    <footer>
+      <!-- placehold -->
+      <p>some kind of footer text</p>
+    </footer>
+ 
+  </main>
+ 
+  <script src="volButton.js"></script>
+</body>
+</html>
