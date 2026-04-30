@@ -1,4 +1,4 @@
-// bubble volume control it'ssss a work in progress
+// bubble volume control
 // main idea: 100 bubbles float around, pop them to raise volume
 // each bubble = 1%
  
